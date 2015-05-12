@@ -11,7 +11,7 @@ RUN rm -rf /var/lib/apt/lists/* \
 
 # Avoid auto-daemonizaiton
 RUN sed -i -e 's/;daemonize = yes/daemonize = no/' /etc/php5/fpm/php-fpm.conf
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+COPY config/nginx.conf /etc/nginx/nginx.conf
 
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
