@@ -2,8 +2,7 @@ FROM debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update
-RUN apt-get -y install nginx php5-fpm php5-cli php5-mysql php5-mcrypt php5-curl php5-gd php5-intl curl supervisor
+RUN apt-get update && apt-get -y install nginx php5-fpm php5-cli php5-mysql php5-mcrypt php5-curl php5-gd php5-intl curl supervisor
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* \
            /tmp/* \
